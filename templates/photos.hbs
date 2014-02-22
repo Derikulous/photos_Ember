@@ -1,0 +1,22 @@
+<button class="btn btn-large btn-primary new" {{action 'goToNewPhoto'}}>New photo</button>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+    {{#each}}
+      <tr>
+        <td>{{#link-to 'photo' this}}<img class="thumbnail" {{bind-attr src=thumbnail}} />{{/link-to}}</td>
+        <td>{{#link-to 'photo' this}}{{title}}{{/link-to}}</td>
+        <td>{{#link-to 'photo' this}}{{description}}{{/link-to}}</td>
+        <td>
+          <span class="edit" {{action 'edit' this}}></span>
+          <span class="remove" {{action 'delete' this}}></span>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

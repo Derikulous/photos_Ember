@@ -1,0 +1,12 @@
+{{#with controllers.photo.content}}
+<form class="form-horizontal">
+  <fieldset>
+    <legend>Edit photo</legend>
+    {{partial 'photo/form'}}
+  </fieldset>
+</form>
+<div class="btn-group">
+  <button class="btn" {{action 'update' this}}>Update</button>
+  <button class="btn" {{action 'cancel' this}}>Cancel</button>
+</div>
+{{/with}}
